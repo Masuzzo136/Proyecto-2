@@ -20,35 +20,82 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  
 }
 
 .logo {
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.logo a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px; /* Ajusta el ancho del enlace según las dimensiones del logo */
+  height: 100px; /* Ajusta la altura del enlace según las dimensiones del logo */
+  z-index: 1;
 }
 
 .logo img {
   height: 100px;
+  margin-top: 10px;
 }
 
 nav a {
   font-weight: 600;
   padding-right: 10px;
+  font-family: 'Alkatra', cursive;
 }
 
 nav a:hover {
   color: rgb(201, 55, 201);
 }
 
-
-#a {
-  font-size: 36px;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  line-height: 1.2;
-  font-family: 'Alkatra', cursive;
+.section-divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0.2));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-top: 0px;
 }
+
+
+#a a {
+  text-decoration: none;
+  color: #181616;
+  font-family: 'Alkatra', cursive;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold; 
+  font-style: italic; 
+  
+}
+
+#a a::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(236, 101, 209, 0.795);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+  
+}
+
+#a a:hover::before {
+  transform: scaleX(1);
+}
+
 
 #b {
   margin-top: 20px;
@@ -143,15 +190,19 @@ nav a:hover {
   text-transform: uppercase;
   font-family: 'Helvetica', sans-serif;
   border-radius: 50px;
-  text-size-adjust: 20px;
+  font-size: 20px;
   width: 200px;
   height: 40px;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin: 0 auto;
- 
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 #change-font {
   display: block;
@@ -222,3 +273,15 @@ main {
   }
 }
 
+.image-container {
+  width: 200px; /* Ajusta el tamaño del círculo según tus necesidades */
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
